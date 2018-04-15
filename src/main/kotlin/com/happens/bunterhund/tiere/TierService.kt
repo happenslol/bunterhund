@@ -30,11 +30,21 @@ class TierService(
             .mapNotNull { it.haustierName }
 
         val tiere = tierRepository.findAll()
-        val tiereZumVerkauf = tiere.filter {
+        val nichtHaustiere = tiere.filter {
             it.name !in mitarbeiterHaustierNamen
         }
 
+        val tiereMitPreis = tiere
+            .filter { it.preis != null }
+
+        val tiereZumVerkauf = (tiereMitPreis + nichtHaustiere)
+            .distinctBy { it.id }
+
         return tiereZumVerkauf
+    }
+
+    fun tiereNichtZumVerkauf(): List<Tier> {
+        TODO("Nicht implementiert")
     }
 
     private fun TierArt.artikel(): String =

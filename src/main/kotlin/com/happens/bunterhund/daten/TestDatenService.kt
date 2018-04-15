@@ -55,57 +55,57 @@ class TestDatenService(
     )
 
     fun tierBeispiele(): List<Tier> = listOf(
-        Tier(art = "Hund", name = "Fido", alter = 5),
-        Tier(art = "Hund", name = "Brutus", alter = 8),
-        Tier(art = "Hund", name = "Pluto", alter = 3),
-        Tier(art = "Hund", name = "Balu", alter = 5),
-        Tier(art = "Hund", name = "Benny", alter = 8),
-        Tier(art = "Hund", name = "Sami", alter = 3),
-        Tier(art = "Hund", name = "Diana", alter = 5),
-        Tier(art = "Hund", name = "Diva", alter = 8),
+        Tier(art = "Hund", name = "Fido", alter = 5, preis = 50),
+        Tier(art = "Hund", name = "Brutus", alter = 8, preis = 80),
+        Tier(art = "Hund", name = "Pluto", alter = 3, preis = 100),
+        Tier(art = "Hund", name = "Balu", alter = 5, preis = 50),
+        Tier(art = "Hund", name = "Benny", alter = 8, preis = 20),
+        Tier(art = "Hund", name = "Sami", alter = 3, preis = 100),
+        Tier(art = "Hund", name = "Diana", alter = 5, preis = 30),
+        Tier(art = "Hund", name = "Diva", alter = 8, preis = 20),
         Tier(art = "Hund", name = "Bambi", alter = 3),
 
         Tier(art = "Katze", name = "Katarina", alter = 4),
-        Tier(art = "Katze", name = "Drops", alter = 11),
-        Tier(art = "Katze", name = "Roofie", alter = 9),
-        Tier(art = "Katze", name = "Blackie", alter = 9),
+        Tier(art = "Katze", name = "Drops", alter = 11, preis = 100),
+        Tier(art = "Katze", name = "Roofie", alter = 9, preis = 50),
+        Tier(art = "Katze", name = "Blackie", alter = 9, preis = 30),
 
         Tier(art = "Goldfisch", name = "Karl", alter = 2),
-        Tier(art = "Goldfisch", name = "Qwerty", alter = 22),
+        Tier(art = "Goldfisch", name = "Qwerty", alter = 22, preis = 5),
         Tier(art = "Goldfisch", name = "Romeo", alter = 18),
-        Tier(art = "Goldfisch", name = "Nemo", alter = 5),
+        Tier(art = "Goldfisch", name = "Nemo", alter = 5, preis = 10),
         Tier(art = "Goldfisch", name = "Penelope", alter = 10),
 
-        Tier(art = "Regenbogenfisch", name = "Tilli", alter = 15),
-        Tier(art = "Regenbogenfisch", name = "Verne", alter = 10),
-        Tier(art = "Regenbogenfisch", name = "Jake", alter = 22),
-        Tier(art = "Regenbogenfisch", name = "Beans", alter = 8),
-        Tier(art = "Regenbogenfisch", name = "Rango", alter = 3),
+        Tier(art = "Regenbogenfisch", name = "Tilli", alter = 15, preis = 20),
+        Tier(art = "Regenbogenfisch", name = "Verne", alter = 10, preis = 20),
+        Tier(art = "Regenbogenfisch", name = "Jake", alter = 22, preis = 20),
+        Tier(art = "Regenbogenfisch", name = "Beans", alter = 8, preis = 25),
+        Tier(art = "Regenbogenfisch", name = "Rango", alter = 3, preis = 15),
 
-        Tier(art = "Maus", name = "Fips", alter = 1),
-        Tier(art = "Maus", name = "Knibbel", alter = 2),
-        Tier(art = "Maus", name = "Blitz", alter = 1),
+        Tier(art = "Maus", name = "Fips", alter = 1, preis = 4),
+        Tier(art = "Maus", name = "Knibbel", alter = 2, preis = 10),
+        Tier(art = "Maus", name = "Blitz", alter = 1, preis = 5),
 
         Tier(art = "Karpfen", name = "Elmo", alter = 3),
         Tier(art = "Karpfen", name = "Chong", alter = 5),
-        Tier(art = "Karpfen", name = "Cleo", alter = 19),
-        Tier(art = "Karpfen", name = "Goldie", alter = 3),
+        Tier(art = "Karpfen", name = "Cleo", alter = 19, preis = 20),
+        Tier(art = "Karpfen", name = "Goldie", alter = 3, preis = 10),
 
-        Tier(art = "Kaninchen", name = "Judy", alter = 3),
-        Tier(art = "Kaninchen", name = "Pumpkin", alter = 5),
+        Tier(art = "Kaninchen", name = "Judy", alter = 3, preis = 20),
+        Tier(art = "Kaninchen", name = "Pumpkin", alter = 5, preis = 10),
         Tier(art = "Kaninchen", name = "Pippa", alter = 3),
         Tier(art = "Kaninchen", name = "Graf von Krolock", alter = 4),
 
-        Tier(art = "Schildkroete", name = "Walter", alter = 30),
-        Tier(art = "Schildkroete", name = "Rosalinda", alter = 27),
+        Tier(art = "Schildkroete", name = "Walter", alter = 30, preis = 50),
+        Tier(art = "Schildkroete", name = "Rosalinda", alter = 27, preis = 45),
 
         Tier(art = "Wellensittich", name = "Peter", alter = 10),
         Tier(art = "Wellensittich", name = "Zazou", alter = 4),
 
         Tier(art = "Papagei", name = "Polly", alter = 7),
-        Tier(art = "Papagei", name = "Carla", alter = 15),
+        Tier(art = "Papagei", name = "Carla", alter = 15, preis = 15),
         Tier(art = "Papagei", name = "Bonnie", alter = 11),
-        Tier(art = "Papagei", name = "Clyde", alter = 10)
+        Tier(art = "Papagei", name = "Clyde", alter = 10, preis = 10)
     )
 
     fun mitarbeiterBeispiele(): List<Mitarbeiter> = listOf(

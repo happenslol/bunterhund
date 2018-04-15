@@ -16,7 +16,9 @@ data class Tier(
 
     val name: String,
 
-    val alter: Int
+    val alter: Int,
+
+    val preis: Int? = null
 )
 
 interface TierRepository : MongoRepository<Tier, String> {

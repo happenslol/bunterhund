@@ -69,4 +69,8 @@ class MitarbeiterService(
                 tierArtRepository.findById(tier.art).orNull()
             }
             ?.futter ?: "Kein Haustier"
+
+    fun genugFutterFuerMitarbeiter(): Boolean {
+        TODO("Nicht implementiert")
+    }
 }
