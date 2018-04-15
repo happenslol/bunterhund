@@ -17,7 +17,7 @@ class TierController(
     fun eins(
         @PathVariable("id")
         id: String
-    ): Tier = tierService.tierMitId(id).orNull()
+    ): Tier = tierService.tierMitId(id)
         ?: throw TierFehler.TierNichtGefunden()
 
     @PostMapping
@@ -42,6 +42,7 @@ class TierController(
         return tierService.speichern(tier)
     }
 
+    @DeleteMapping("/{id}")
     fun loeschen(
         @PathVariable("id")
         id: String
@@ -52,6 +53,25 @@ class TierController(
         tierService.loeschen(tierZuLoeschen)
 
         return ResponseEntity.noContent()
+    }
+
+
+    data class TierBeschreibung(
+        val beschreibung: String
+    )
+
+    @GetMapping("/{id}/beschreibung")
+    fun beschreibung(
+        @PathVariable("id")
+        id: String
+    ): TierBeschreibung {
+        val tier = tierService.tierMitId(id) ?:
+            throw TierFehler.TierNichtGefunden()
+
+        val text = tierService.beschreibung(tier)
+        return TierBeschreibung(
+            beschreibung = text
+        )
     }
 }
 

@@ -1,5 +1,6 @@
 package com.happens.bunterhund.tiere
 
+import com.happens.bunterhund.orNull
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.repository.MongoRepository
@@ -18,7 +19,9 @@ data class Tier(
     val alter: Int
 )
 
-interface TierRepository : MongoRepository<Tier, String>
+interface TierRepository : MongoRepository<Tier, String> {
+    fun findByName(name: String): Tier?
+}
 
 @Document
 data class TierArt(

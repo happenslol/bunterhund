@@ -10,7 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner
 class BunterhundApplicationTests {
 
 	@Test
-	fun contextLoads() {
-	}
+	fun `Applikation startet`() {}
 
 }
