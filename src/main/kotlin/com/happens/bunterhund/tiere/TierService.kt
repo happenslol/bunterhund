@@ -54,4 +54,11 @@ class TierService(
 
             else -> "ein"
         }
+
+    private fun Tier.istValide(): Boolean {
+        if (this.alter <= 0) return false
+        if (this.name.isEmpty()) return false
+
+        return true
+    }
 }

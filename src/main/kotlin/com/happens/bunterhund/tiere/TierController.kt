@@ -20,6 +20,12 @@ class TierController(
     ): Tier = tierService.tierMitId(id)
         ?: throw TierFehler.TierNichtGefunden()
 
+    @GetMapping("/{id}/preis")
+    fun preis(
+        @PathVariable("id")
+        id: String
+    ): Int = tierService.tierMitId(id)?.preis ?: throw TierFehler.KeinPreisVerfuegbar()
+
     @PostMapping
     fun erstellen(
         @RequestBody
@@ -75,11 +81,14 @@ class TierController(
     }
 }
 
-sealed class TierFehler : RuntimeException() {
+sealed class TierFehler(message: String) : RuntimeException(message = message) {
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    class TierNichtGefunden : TierFehler()
+    class TierNichtGefunden : TierFehler(message = "Tier konnte nicht gefunden werden")
 
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    class KeineVeraenderung : TierFehler()
+    class KeineVeraenderung : TierFehler(message = "Tier wurde nicht veraendert")
+
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    class KeinPreisVerfuegbar : TierFehler(message = "Tier existiert nicht oder steht nicht zum Verkauf")
 }
