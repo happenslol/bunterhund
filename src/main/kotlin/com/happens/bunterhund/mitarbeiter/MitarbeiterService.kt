@@ -14,14 +14,17 @@ class MitarbeiterService(
 ) {
     fun alle(): List<Mitarbeiter> = mitarbeiterRepository.findAll()
 
-    fun mitarbeiterHaustiere(): List<Tier> {
-        val mitarbeiter = mitarbeiterRepository.findAll()
-
-        val haustiere = mitarbeiter
+    fun mitarbeiterHaustiere(): List<Tier> =
+        mitarbeiterRepository.findAll()
             .mapNotNull { it.haustierName }
             .mapNotNull { tierRepository.findByName(it) }
 
-        return haustiere
+    fun haustierHinzufuegen(tier: Tier, mitarbeiter: Mitarbeiter): Mitarbeiter {
+        val zuSpeichern = mitarbeiter.copy(
+            haustierName = tier.name
+        )
+
+        return mitarbeiterRepository.save(zuSpeichern)
     }
 
     fun haustiereHinzufuegen(zumHinzufuegen: Map<Mitarbeiter, Tier>): List<Mitarbeiter> {

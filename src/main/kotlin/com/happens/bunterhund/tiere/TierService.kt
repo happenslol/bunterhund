@@ -24,6 +24,12 @@ class TierService(
         """
     }
 
+    fun tierArtAnzahl(): Map<String, Int> =
+        tierRepository.findAll()
+            .groupBy { it.art }
+            .map { it.key to it.value.count() }
+            .toMap()
+
     fun tiereZumVerkauf(): List<Tier> {
         val mitarbeiter = mitarbeiterRepository.findAll()
         val mitarbeiterHaustierNamen = mitarbeiter
